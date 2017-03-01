@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="A easy to use, clean interface CloudFlare Resolver">
+    <meta name="keywords" content="CloudFlare Resolver, CloudResolve, Customizable CloudFlare Resolver, Subdomain Cloudflare, Cloud, Resolve">
+
+
+    <title>CloudResolve</title>
+
+    <script src="js/pace.js"></script>
+    <link href="css/loader.css" rel="stylesheet" />
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel='shortcut icon' type='image/x-icon' href='favicon.ico' />
+
+    <style>
+    body {
+        padding-top: 70px;
+    }
+    </style>
+
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+    <!-- Page Content -->
+    <div class="container">
+
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h1><span class="glyphicon glyphicon-cloud"></span> CloudResolve</h1>
+                <p class="lead">A easy to use, clean interface CloudFlare Resolver</p>
+
+                <div id="alertDiv">
+                  <a href="#" id="closeAlert" class="close" aria-label="close">&times;</a>
+                  <p id="alertText"></p>
+                </div>
+
+                <div class="input-group">
+                  <input type="text" class="form-control" placeholder="Domain Name" id="domain" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+                  <span class="input-group-btn">
+                    <button class="btn btn-primary" type="button" id="doSearch"><span class="glyphicon glyphicon-search"></span> Resolve</button>
+                    <button class="btn btn-info" type="button" id="doSettings"><span class="glyphicon glyphicon-wrench"></span></button>
+                  </span>
+                </div>
+
+                <div id="tableDiv">
+
+                    <br><br>
+
+                    <table class="table table-reflow text-left" id="resultsTable">
+                      <thead>
+                        <tr>
+                          <th>FQDN</th>
+                          <th>DNS Result</th>
+                          <th>IP Address</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                      </tbody>
+                    </table>
+
+                </div>
+
+                <div id="newSearchDiv">
+                    <br><br>
+
+                    <button type="button" class="btn btn-success" id="doNew"><span class="glyphicon glyphicon-repeat"></span> New Lookup</button>
+                </div>
+
+                <br><br>
+
+                <ul class="list-unstyled">
+                    <li>Copyright &copy; CloudResolve.net</li>
+                </ul>
+            </div>
+
+            <div class="modal fade" tabindex="-1" role="dialog" id="settingsModal">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title"><span class="glyphicon glyphicon-wrench"></span> CloudResolve Subdomain Settings</h4>
+                  </div>
+                  <div class="modal-body">
+                    <p class="text-center">CloudResolve will use the following subdomains to try find an IP address not masked by CloudFlare. You may add or remove any subdomains as you see fit.</p>
+                    <textarea autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" class="form-control" rows="10" id="subdomainslist"></textarea>
+                  </div>
+                  <div class="modal-footer">
+                    <p class="text-center">The changes you make are temporary and will reset when you reload the page.</p>
+                    <button type="button" class="btn btn-primary" id="doSettingsSave">Save changes</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+
+    </div>
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/brains.js"></script>
+
+</body>
+
+</html>
